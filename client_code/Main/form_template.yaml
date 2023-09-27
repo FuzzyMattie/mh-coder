@@ -1,0 +1,86 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Username,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: username
+    layout_properties: {grid_position: 'CARAVG,MWHRNU'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: true, tooltip: '', placeholder: Primary Password,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: primarypw
+    layout_properties: {grid_position: 'OPWYMW,JFORDK'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: true, tooltip: '', placeholder: Secondary Password,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: secondarypw
+    layout_properties: {grid_position: 'LLIZRS,PNWWYP'}
+  - type: Button
+    properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Login, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: loginbutton
+    layout_properties: {grid_position: 'RAUXKU,PZYGHS'}
+    event_bindings: {click: loginbutton_click}
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: infolable
+    layout_properties: {grid_position: 'YFDQLI,ZZIRRO'}
+  - type: ColumnPanel
+    properties: {role: outlined-card, col_widths: '{}'}
+    name: outlined_card_1
+    layout_properties: {grid_position: 'AICLBB,MAWOUJ'}
+    components:
+    - type: Button
+      properties: {role: outlined-button, align: center, tooltip: '', border: '',
+        enabled: true, foreground: '', visible: true, text: Encode (Data to Code),
+        font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+        italic: false, background: '', bold: false, underline: false, icon: ''}
+      name: encode
+      layout_properties: {grid_position: 'YCJIOJ,WKKNAJ'}
+      event_bindings: {hide: encode_hide, click: encode_click}
+    - type: Button
+      properties: {role: outlined-button, align: center, tooltip: '', border: '',
+        enabled: true, foreground: '', visible: true, text: Decode (Code to data),
+        font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+        italic: false, background: '', bold: false, underline: false, icon: ''}
+      name: decode
+      layout_properties: {grid_position: 'YCJIOJ,RUDEEG'}
+      event_bindings: {click: decode_click}
+    - type: Button
+      properties: {role: outlined-button, align: center, tooltip: '', border: '',
+        enabled: true, foreground: '', visible: true, text: Logout, font_size: null,
+        font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: ''}
+      name: logout
+      layout_properties: {grid_position: 'YCJIOJ,WBLYBW'}
+      event_bindings: {click: logout_click}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+- type: Label
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: MH Coder, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: title
+  layout_properties: {slot: title}
